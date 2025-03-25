@@ -5,9 +5,12 @@ import AllTasks from "./pages/AllTasks";
 import ImportantTasks from "./pages/ImportantTasks";
 import CompletedTasks from "./pages/CompletedTasks";
 import InCompletedTasks from "./pages/InCompletedTasks";
+import SignUp from "./pages/SignUp";
+import LogIn from "./pages/LogIn";
+
 const App = () => {
   return (
-    <div className="bg-gray-900 text-white h-screen p-2">
+    <div className="bg-gray-900 text-white h-screen p-2 relative">
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Home />}>
@@ -16,6 +19,9 @@ const App = () => {
             <Route path="/completedTasks" element={<CompletedTasks />} />
             <Route path="/incompletedTasks" element={<InCompletedTasks />} />
           </Route>
+          <Route path="/signup" element={<SignUp />}/>
+          <Route path="/login" element={<LogIn />}/>
+
         </Routes>
       </BrowserRouter>
     </div>

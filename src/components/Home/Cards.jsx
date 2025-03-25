@@ -4,7 +4,7 @@ import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { IoAddCircleSharp } from "react-icons/io5";
 
-const Cards = () => {
+const Cards = ({ home,setInputDiv }) => {
   const data = [
     {
       title: "The Best Coding Channel",
@@ -64,13 +64,16 @@ const Cards = () => {
             </div>
           </div>
         ))}
-      <div
-        className="bg-gray-800 rounded-sm p-4 flex flex-col justify-center items-center text-gray-300 
-        hover:scale-105 hover:cursor-pointer transition-all duration-300"
-      >
-        <IoAddCircleSharp className="text-5xl" />
-        <h2 className="text-2xl mt-4">Add Task</h2>
-      </div>
+      {home === "true" && (
+        <button
+        onClick={()=>setInputDiv("fixed")}
+          className="bg-gray-800 rounded-sm p-4 flex flex-col justify-center items-center text-gray-300 
+            hover:scale-105 hover:cursor-pointer transition-all duration-300"
+        >
+          <IoAddCircleSharp className="text-5xl" />
+          <h2 className="text-2xl mt-4">Add Task</h2>
+        </button>
+      )}
     </div>
   );
 };
